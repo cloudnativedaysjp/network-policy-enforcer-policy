@@ -12,7 +12,7 @@ all clusters within one cycle without a DaemonSet restart.
 ## Source of truth
 
 ```
-https://raw.githubusercontent.com/cloudnativedaysjp/network-policy-enforcer-policy/main/policy.json
+https://raw.githubusercontent.com/cloudnativedaysjp/network-policy-enforcer-policy/refs/heads/main/policy.json
 ```
 
 The default `POLICY_URL` baked into the enforcer image points here. Operators
