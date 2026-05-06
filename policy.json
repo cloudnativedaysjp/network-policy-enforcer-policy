@@ -12,7 +12,7 @@
       "192.168.0.0/16"
     ],
     "destination_exclude_cidrs": [],
-    "peer_syn_rate_pps": 1000,
+    "peer_syn_rate_pps": 100,
     "on_exceed": "drop"
   }
 }
