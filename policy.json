@@ -1,0 +1,15 @@
+{
+  "version": "v2.4.0",
+  "policy": {
+    "name": "lateral-movement-baseline",
+    "description": "Detect and throttle lateral movement across internal segments. Centrally maintained by InfoSec.",
+    "destination_cidrs": [
+      "10.0.0.0/8",
+      "172.16.0.0/12",
+      "192.168.0.0/16"
+    ],
+    "rate_limit_pps": 2000,
+    "peer_syn_rate_pps": 100,
+    "on_exceed": "drop"
+  }
+}
