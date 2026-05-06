@@ -1,15 +1,16 @@
 {
-  "version": "v2.4.0",
+  "version": "v2.5.0-rc.0",
   "policy": {
-    "name": "lateral-movement-baseline",
-    "description": "Detect and throttle lateral movement across internal segments. Centrally maintained by InfoSec.",
-    "destination_cidrs": [
-      "10.0.0.0/8",
-      "172.16.0.0/12",
-      "192.168.0.0/16"
+    "name": "egress-rate-shield-baseline",
+    "description": "Throttle high-rate egress originating from in-cluster Pods toward outside-cluster destinations. Designed to limit DoS pivot / exfil / C2 beacon volume from compromised Pods. Centrally maintained by Platform / SecOps.",
+    "source_cidrs": [
+      "10.0.0.0/8"
     ],
-    "rate_limit_pps": 2000,
-    "peer_syn_rate_pps": 100,
+    "destination_cidrs": [
+      "0.0.0.0/0"
+    ],
+    "destination_exclude_cidrs": [],
+    "peer_syn_rate_pps": 1000,
     "on_exceed": "drop"
   }
 }
