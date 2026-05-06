@@ -26,6 +26,7 @@ this repository and is what gets reviewed for compliance audits.
 | `source_cidrs` | `[]string` | rate-limit 適用対象の送信元 CIDR (= cluster 内 Pod CIDR を想定) |
 | `destination_cidrs` | `[]string` | rate-limit を適用する宛先 CIDR の列挙 |
 | `destination_exclude_cidrs` | `[]string` | `destination_cidrs` から除外する宛先網。rate-limit 対象から外したい網 (例: cluster 内向けトラフィックなど) を指定 |
+| `rate_limit_pps` | `int` | source Pod IP ごとの `destination_cidrs` 向けトラフィックの pps しきい値 |
 | `peer_syn_rate_pps` | `int` | (source, destination peer) ごとの SYN レート上限 (pps) |
 | `on_exceed` | `string` | しきい値超過時の動作 (`drop` / `log` 等) |
 
@@ -53,10 +54,11 @@ Changes to `policy.json` require Platform / SecOps review.
 > **Note (since enforcer v2.5.0-rc.0):** Operators can override individual
 > policy fields per-DaemonSet via environment variables
 > (`POLICY_SOURCE_CIDRS`, `POLICY_DESTINATION_CIDRS`,
-> `POLICY_DESTINATION_EXCLUDE_CIDRS`, `POLICY_PEER_SYN_RATE_PPS`).
+> `POLICY_DESTINATION_EXCLUDE_CIDRS`, `POLICY_RATE_LIMIT_PPS`,
+> `POLICY_PEER_SYN_RATE_PPS`).
 > Env values take precedence over `policy.json` for the matching fields.
 > See enforcer issue
-> [#42](https://github.com/cloudnativedaysjp/network-policy-enforcer/issues/42)
+> [#1](https://github.com/cloudnativedaysjp/network-policy-enforcer/issues/1)
 > for the discussion that led to this feature.
 
 ## Schema reference
