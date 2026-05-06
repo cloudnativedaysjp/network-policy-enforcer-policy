@@ -7,7 +7,9 @@
       "10.0.0.0/8"
     ],
     "destination_cidrs": [
-      "0.0.0.0/0"
+      "10.0.0.0/8",
+      "172.16.0.0/12",
+      "192.168.0.0/16"
     ],
     "destination_exclude_cidrs": [],
     "peer_syn_rate_pps": 1000,
