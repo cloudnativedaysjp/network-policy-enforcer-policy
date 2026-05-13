@@ -56,7 +56,7 @@ Changes to `policy.json` require Platform / SecOps review.
 > `POLICY_DESTINATION_EXCLUDE_CIDRS`, `POLICY_PEER_SYN_RATE_PPS`).
 > Env values take precedence over `policy.json` for the matching fields.
 > See enforcer issue
-> [#42](https://github.com/cloudnativedaysjp/network-policy-enforcer/issues/42)
+> [#1](https://github.com/cloudnativedaysjp/network-policy-enforcer/issues/1)
 > for the discussion that led to this feature.
 
 ## Schema reference
